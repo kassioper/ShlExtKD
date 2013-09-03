@@ -1,0 +1,9 @@
+LIBRARY "SHLEXTKD.dll"
+
+EXPORTS
+  DllRegisterServer         PRIVATE ; COM server registration
+  DllUnregisterServer       PRIVATE ; COM server registration
+  DllMain	                  PRIVATE
+	DllGetClassObject	        PRIVATE
+	DllCanUnloadNow			      PRIVATE  
+  

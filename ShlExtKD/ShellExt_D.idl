@@ -1,0 +1,38 @@
+// ShlExtK.idl : IDL source for ShlExtK.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ShlExtK.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(DD0DE84B-C83D-4384-8672-D8E1DA6D5109),
+		dual,
+		helpstring("IShlExtKD Interface"),
+		pointer_default(unique)
+	]
+	interface IShlExtKD : IDispatch
+	{
+	};
+
+[
+	uuid(7040CAF8-1869-46a3-8C82-3CB782536F9A),
+	version(1.0),
+	helpstring("ShlExtKD 1.0 Type Library")
+]
+library SHLEXTKDLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(CA529F44-30DC-4654-A14C-8F7D90667FC7),
+		helpstring("ShlExtKD Class")
+	]
+	coclass ShlExtKD
+	{
+		[default] interface IShlExtKD;
+	};
+};
