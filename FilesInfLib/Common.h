@@ -17,10 +17,4 @@ typedef __int64 QWORD, *LPQWORD;
 #endif
 #endif
 
-#if WINVER > 0x0600
-#define FILESIZE QWORD
-#else
-#define FILESIZE DWORD
-#endif
-
-	typedef tstring::size_type StrIdx;
+typedef tstring::size_type StrIdx;

@@ -39,7 +39,7 @@
 		*buf++ = space;
 		*buf++ = space;
 
-		StrFormatByteSize( (FILESIZE)pFileInf->Size,	buf, ARRAYSIZE(Buf)+  (buf - Buf));
+		StrFormatByteSize(pFileInf->Size,	buf, ARRAYSIZE(Buf)+  (buf - Buf));
 		while (*buf++ != NULL) ;
 		--buf;
  		*buf++ = space;
