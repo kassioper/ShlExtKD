@@ -64,9 +64,6 @@ BOOL CFilesInf::FilesDetailsRead(HWND hWnd)
 		return 0;
 	::QueryPerformanceCounter(&qpcStart);
 
-	m_LogOutFirstItem = 0;
-	InterlockedIncrement(&m_ThreadCount);
-	QueueUserWorkItem( FilesInfThreadFuncLog, (PVOID) this, WT_EXECUTEDEFAULT );
 
 	if (threadsMaxCount)
 	{
@@ -103,7 +100,9 @@ BOOL CFilesInf::FilesDetailsRead(HWND hWnd)
 		//OutputDebugString(_T("FilesInfThreadFuncLog After Call\n"));
 	}
 
-	//Sleep(1);
+	Sleep(1); //? win XP bug
+	m_LogOutFirstItem = 0;
+	QueueUserWorkItem( FilesInfThreadFuncLog, (PVOID) this, WT_EXECUTEDEFAULT );
 
 	pIMalloc->Release();
 	return TRUE; 
